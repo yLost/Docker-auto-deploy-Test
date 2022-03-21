@@ -22,6 +22,11 @@ jobs:
             #  git clone ${{ github.repositoryUrl }} -b ${{ github.ref_name }} ${{ secrets.DIR_TARGET }} --bare
         - name: repo_pull
           if: job.steps.clone.status == failure() || job.steps.world.status == failure()
+          uses: appleboy/ssh-action@master
           with:
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            password: ${{ secrets.SSH_PASSWORD }}
+            port: ${{ secrets.SSH_PORT }}
             script: |
               git pull origin ${{ github.ref_name }}
