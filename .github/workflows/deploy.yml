@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: setup-docker-remote
+        uses: nightstory/setup-docker-remote@v1
+        with:
+          # Raw content of the private key (~/.ssh/id_rsa)
+          ssh_key: ${{secrets.DOCKER_SSH_PRIVATE_KEY}}
+          # SSH username, e.g. from username@host use username
+          ssh_host_user: ${{secrets.DOCKER_SSH_USER}}
+          # SSH host, e.g. from username@host use host
+          ssh_host: ${{secrets.DOCKER_SSH_HOST}}
