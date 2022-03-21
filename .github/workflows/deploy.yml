@@ -17,5 +17,5 @@ jobs:
             password: ${{ secrets.SSH_PASSWORD }}
             port: ${{ secrets.SSH_PORT }}
             script: |
-              cd ${{ secrets.DIR_TARGET }}
-              git clone ${{ github.repositoryUrl }} -b ${{ github.ref_name }} ${{ secrets.DIR_TARGET }} --bare
+              git clone ${{ github.server_url }}/${{ github.repository }} -b ${{ github.ref_name }} ${{ secrets.DIR_TARGET }} --bare
+            #  git clone ${{ github.repositoryUrl }} -b ${{ github.ref_name }} ${{ secrets.DIR_TARGET }} --bare
