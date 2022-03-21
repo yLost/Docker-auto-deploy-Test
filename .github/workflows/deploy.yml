@@ -12,9 +12,9 @@ jobs:
         - name: executing remote ssh commands using password
           uses: appleboy/ssh-action@master
           with:
-            host: ${{ env.HOST }}
-            username: ${{ env.USER }}
-            password: ${{ env.PASSOWRD }}
-            port: ${{ env.PORT }}
+            host: ${{ secrets.SSH_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            password: ${{ secrets.SSH_PASSOWRD }}
+            port: ${{ secrets.SSH_PORT }}
             script: |
               mkdir batata
