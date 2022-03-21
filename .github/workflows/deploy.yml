@@ -21,8 +21,8 @@ jobs:
           # SSH private key used to connect to the docker host
           ssh_private_key: ${{secrets.DOCKER_SSH_PRIVATE_KEY}}
           deployment_mode: docker-compose
-          args: |
-            up -d
+          args: up -d
+          input_args: |
             docker stack deploy --compose-file docker-compose.yaml --log-level debug --host ${{secrets.DOCKER_SSH_HOST}}
           pre_deployment_command_args: 'bundle exec rake db:migrate'
           docker_prune: 'true'
