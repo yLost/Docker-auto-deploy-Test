@@ -1,0 +1,22 @@
+{
+  "name": "Docker Auto-Deploy Test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yLost/Docker-auto-deploy-Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yLost/Docker-auto-deploy-Test/issues"
+  },
+  "homepage": "https://github.com/yLost/Docker-auto-deploy-Test#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
