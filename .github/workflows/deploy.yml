@@ -18,3 +18,4 @@ jobs:
           ssh_host_user: ${{secrets.DOCKER_SSH_USER}}
           # SSH host, e.g. from username@host use host
           ssh_host: ${{secrets.DOCKER_SSH_HOST}}
+          known_hosts: 'just-a-placeholder-so-we-dont-get-errors'
